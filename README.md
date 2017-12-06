@@ -23,6 +23,10 @@ var shortPath = replaceHomedir('/Users/phated/myProject', '~');
 
 ### `replaceHomedir(path, replacement)`
 
+Takes a string `path` as the first argument and a string or function `replacement` as the second argument. If the `path` is absolute and begins with the User's homedir, the homedir portion of the path is replaced with `replacement` using String#replace.
+
+If `path` is not a string, the function will throw.
+
 ## License
 
 MIT
