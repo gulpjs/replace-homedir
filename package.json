@@ -23,7 +23,11 @@
     "cover": "istanbul cover _mocha --report lcovonly",
     "coveralls": "npm run cover && istanbul-coveralls"
   },
-  "dependencies": {},
+  "dependencies": {
+    "homedir-polyfill": "^1.0.1",
+    "is-absolute": "^1.0.0",
+    "remove-trailing-separator": "^1.1.0"
+  },
   "devDependencies": {
     "eslint": "^1.7.3",
     "eslint-config-gulp": "^2.0.0",
