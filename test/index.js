@@ -10,7 +10,8 @@ var replaceHomedir = require('../');
 describe('replace-homedir', function() {
 
   var home = homedir();
-  var here = __dirname.replace(home, '');
+  var relative = 'replace-homedir/test';
+  var absolute = path.join(home, relative);
 
   it('throws if path is not a string', function(done) {
     function invalidPath() {
@@ -22,33 +23,33 @@ describe('replace-homedir', function() {
   });
 
   it('replaces the homedir with replacement string', function(done) {
-    var result = replaceHomedir(__dirname, '~');
-    var expected = path.join('~', here);
+    var result = replaceHomedir(absolute, '~');
+    var expected = path.join('~', relative);
     expect(result).toEqual(expected);
     done();
   });
 
   it('replaces the homedir with replacement function', function(done) {
-    var result = replaceHomedir(__dirname, function() {
+    var result = replaceHomedir(absolute, function() {
       return '~';
     });
-    var expected = path.join('~', here);
+    var expected = path.join('~', relative);
     expect(result).toEqual(expected);
     done();
   });
 
   it('does not replace the homedir if not at beginning of path', function(done) {
-    var filepath = path.join('/fake', __dirname);
+    var filepath = path.join('/fake', absolute);
     var result = replaceHomedir(filepath, '~');
-    var expected = path.join('/fake', __dirname);
+    var expected = path.join('/fake', absolute);
     expect(result).toEqual(expected);
     done();
   });
 
   it('does not replace homedir when it is a subpath', function(done) {
-    var filepath = path.join(home + '-extended', here);
+    var filepath = path.join(home + '-extended', relative);
     var result = replaceHomedir(filepath, '~');
-    var expected = path.join(home + '-extended', here);
+    var expected = path.join(home + '-extended', relative);
     expect(result).toEqual(expected);
     done();
   });
@@ -57,9 +58,9 @@ describe('replace-homedir', function() {
     var USERPROFILE = process.env.USERPROFILE;
     var HOME = process.env.HOME;
     process.env.USERPROFILE = process.env.HOME = home.slice(1);
-    var filepath = __dirname.slice(1);
+    var filepath = absolute.slice(1);
     var result = replaceHomedir(filepath, '~');
-    var expected = __dirname.slice(1);
+    var expected = absolute.slice(1);
     expect(result).toEqual(expected);
     done();
 

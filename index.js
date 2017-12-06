@@ -1,5 +1,7 @@
 'use strict';
 
+var path = require('path');
+
 var homedir = require('homedir-polyfill');
 var isAbsolute = require('is-absolute');
 var removeTrailingSep = require('remove-trailing-separator');
@@ -14,8 +16,8 @@ function replaceHomedir(filepath, replacement) {
   }
 
   var home = removeTrailingSep(homedir());
-  var lookupHome = home + '/';
-  var lookupPath = removeTrailingSep(filepath) + '/';
+  var lookupHome = home + path.sep;
+  var lookupPath = removeTrailingSep(filepath) + path.sep;
 
   if (lookupPath.indexOf(lookupHome) !== 0) {
     return filepath;
