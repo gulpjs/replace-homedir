@@ -1,6 +1,6 @@
 {
   "name": "replace-homedir",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Replace user home in a string with another string. Useful for tildifying a path.",
   "author": "Gulp Team <team@gulpjs.com> (http://gulpjs.com/)",
   "contributors": [
