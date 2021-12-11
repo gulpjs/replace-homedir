@@ -1,15 +1,15 @@
 'use strict';
 
+var os = require('os');
 var path = require('path');
 
 var expect = require('expect');
-var homedir = require('homedir-polyfill');
 
 var replaceHomedir = require('../');
 
 describe('replace-homedir', function() {
 
-  var home = homedir();
+  var home = os.homedir();
   var relative = 'replace-homedir/test';
   var absolute = path.join(home, relative);
 
