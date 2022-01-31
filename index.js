@@ -13,14 +13,28 @@ function replaceHomedir(filepath, replacement) {
   }
 
   var home = os.homedir();
-  var lookupHome = home + path.sep;
+
+  if (!path.isAbsolute(home)) {
+    return filepath;
+  }
+
+  var lookupHome = path.normalize(home + path.sep);
   var lookupPath = path.normalize(filepath + path.sep);
 
   if (lookupPath.indexOf(lookupHome) !== 0) {
     return filepath;
   }
 
-  return filepath.replace(home, replacement);
+  var output = filepath.replace(lookupHome, function () {
+    var result = replacement;
+    if (typeof replacement === 'function') {
+      result = replacement.apply(this, arguments);
+    }
+
+    return result + path.sep;
+  });
+
+  return path.normalize(output);
 }
 
 module.exports = replaceHomedir;
