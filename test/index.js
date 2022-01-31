@@ -9,7 +9,6 @@ var expect = require('expect');
 var replaceHomedir = require('../');
 
 describe('replace-homedir', function () {
-
   it('throws if path is not a string', function (done) {
     function invalidPath() {
       replaceHomedir(null);

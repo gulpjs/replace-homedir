@@ -31,7 +31,6 @@ If `path` is not a string, the function will throw.
 
 MIT
 
-
 <!-- prettier-ignore-start -->
 [downloads-image]: https://img.shields.io/npm/dm/replace-homedir.svg?style=flat-square
 [npm-url]: https://www.npmjs.com/package/replace-homedir
