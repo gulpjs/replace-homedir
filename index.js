@@ -1,11 +1,11 @@
-'use strict';
+"use strict";
 
-var os = require('os');
-var path = require('path');
+var os = require("os");
+var path = require("path");
 
 function replaceHomedir(filepath, replacement) {
-  if (typeof filepath !== 'string') {
-    throw new Error('Path for replace-homedir must be a string.');
+  if (typeof filepath !== "string") {
+    throw new Error("Path for replace-homedir must be a string.");
   }
 
   if (!path.isAbsolute(filepath)) {
@@ -27,7 +27,7 @@ function replaceHomedir(filepath, replacement) {
 
   var output = filepath.replace(lookupHome, function () {
     var result = replacement;
-    if (typeof replacement === 'function') {
+    if (typeof replacement === "function") {
       result = replacement.apply(this, arguments);
     }
 
