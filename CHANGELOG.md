@@ -1,5 +1,16 @@
 # Changelog
 
+## [3.0.0](https://github.com/gulpjs/replace-homedir/compare/v2.0.0...v3.0.0) (2026-10-08)
+
+
+### ⚠ BREAKING CHANGES
+
+* Normalize repository, dropping Node <22.15.0 ([#5](https://github.com/gulpjs/replace-homedir/issues/5))
+
+### Miscellaneous Chores
+
+* Normalize repository, dropping Node &lt;22.15.0 ([#5](https://github.com/gulpjs/replace-homedir/issues/5)) ([946fcdd](https://github.com/gulpjs/replace-homedir/commit/946fcdd527e39bb7ab28f5a5746d7598b50836d0))
+
 ## [2.0.0](https://www.github.com/gulpjs/replace-homedir/compare/v1.0.0...v2.0.0) (2022-01-31)
 
 
