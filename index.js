@@ -1,7 +1,7 @@
 "use strict";
 
-var os = require("os");
-var path = require("path");
+var os = require("node:os");
+var path = require("node:path");
 
 function replaceHomedir(filepath, replacement) {
   if (typeof filepath !== "string") {
