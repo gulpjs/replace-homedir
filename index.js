@@ -27,7 +27,7 @@ function replaceHomedir(filepath, replacement) {
 
   const output = filepath.replace(lookupHome, (...args) => {
     let result = replacement;
-    
+
     if (typeof replacement === "function") {
       result = replacement(...args);
     }
