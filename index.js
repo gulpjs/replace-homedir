@@ -21,7 +21,7 @@ function replaceHomedir(filepath, replacement) {
   const lookupHome = path.normalize(`${home}${path.sep}`);
   const lookupPath = path.normalize(`${filepath}${path.sep}`);
 
-  if (!lookupPath.startsWith(lookupHome, 0)) {
+  if (!lookupPath.startsWith(lookupHome)) {
     return filepath;
   }
 
