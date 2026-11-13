@@ -32,7 +32,7 @@ function replaceHomedir(filepath, replacement) {
       result = replacement(...args);
     }
 
-    return result + path.sep;
+    return `${result}${path.sep}`;
   });
 
   return path.normalize(output);
