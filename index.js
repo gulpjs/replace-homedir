@@ -1,7 +1,7 @@
 "use strict";
 
-var os = require("node:os");
-var path = require("node:path");
+const os = require("node:os");
+const path = require("node:path");
 
 function replaceHomedir(filepath, replacement) {
   if (typeof filepath !== "string") {
@@ -12,26 +12,27 @@ function replaceHomedir(filepath, replacement) {
     return filepath;
   }
 
-  var home = os.homedir();
+  const home = os.homedir();
 
   if (!path.isAbsolute(home)) {
     return filepath;
   }
 
-  var lookupHome = path.normalize(home + path.sep);
-  var lookupPath = path.normalize(filepath + path.sep);
+  const lookupHome = path.normalize(`${home}${path.sep}`);
+  const lookupPath = path.normalize(`${filepath}${path.sep}`);
 
-  if (lookupPath.indexOf(lookupHome) !== 0) {
+  if (!lookupPath.startsWith(lookupHome)) {
     return filepath;
   }
 
-  var output = filepath.replace(lookupHome, function () {
-    var result = replacement;
+  const output = filepath.replace(lookupHome, (...args) => {
+    let result = replacement;
+
     if (typeof replacement === "function") {
-      result = replacement.apply(this, arguments);
+      result = replacement(...args);
     }
 
-    return result + path.sep;
+    return `${result}${path.sep}`;
   });
 
   return path.normalize(output);
