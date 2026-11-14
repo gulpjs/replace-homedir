@@ -1,11 +1,11 @@
 "use strict";
 
-const os = require("node:os");
-const path = require("node:path");
-const assert = require("node:assert");
-const { describe, it } = require("node:test");
+import os from "node:os";
+import path from "node:path";
+import assert from "node:assert";
+import { describe, it } from "node:test";
 
-const replaceHomedir = require("../");
+import replaceHomedir from "../index.js";
 
 describe("replace-homedir", function () {
   it("throws if path is not a string", function () {
