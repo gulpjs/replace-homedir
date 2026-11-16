@@ -1,5 +1,3 @@
-"use strict";
-
 import os from "node:os";
 import path from "node:path";
 import assert from "node:assert";
