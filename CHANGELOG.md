@@ -1,5 +1,22 @@
 # Changelog
 
+## [3.0.0](https://github.com/gulpjs/replace-homedir/compare/v2.0.0...v3.0.0) (2026-11-18)
+
+
+### ⚠ BREAKING CHANGES
+
+* Convert to ESM ([#13](https://github.com/gulpjs/replace-homedir/issues/13))
+* Normalize repository, dropping Node <22.15.0 ([#5](https://github.com/gulpjs/replace-homedir/issues/5))
+
+### Features
+
+* Convert to ESM ([#13](https://github.com/gulpjs/replace-homedir/issues/13)) ([8880716](https://github.com/gulpjs/replace-homedir/commit/88807162cece035e93112b922e0ebe4847c8f8c0))
+
+
+### Miscellaneous Chores
+
+* Normalize repository, dropping Node &lt;22.15.0 ([#5](https://github.com/gulpjs/replace-homedir/issues/5)) ([946fcdd](https://github.com/gulpjs/replace-homedir/commit/946fcdd527e39bb7ab28f5a5746d7598b50836d0))
+
 ## [2.0.0](https://www.github.com/gulpjs/replace-homedir/compare/v1.0.0...v2.0.0) (2022-01-31)
 
 
