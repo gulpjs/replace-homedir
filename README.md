@@ -13,9 +13,9 @@ Replace user home in a string with another string. Useful for tildifying a path.
 ## Usage
 
 ```js
-var replaceHomedir = require("replace-homedir");
+import replaceHomedir from "replace-homedir";
 
-var shortPath = replaceHomedir("/Users/phated/myProject", "~");
+const shortPath = replaceHomedir("/Users/phated/myProject", "~");
 // shortPath === '~/myProject'
 ```
 
